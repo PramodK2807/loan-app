@@ -68,6 +68,43 @@ export default {
     let password = registerData.password;
     let cpassword = registerData.confirmPassword;
     let agreement = registerData.agreement;
+    // const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    // if (!emailRegex.test(email)) {
+    //    this.$swal.fire({
+    //      toast: true,
+    //      position: "top-end",
+    //      icon: "error",
+    //      title: "Enter valid email address",
+    //      showConfirmButton: false,
+    //      timerProgressBar: true,
+    //      timer: 8000,
+    //    });
+    //    return false;
+    // }
+    if (password.length < 8 || password.length > 15) {
+      this.$swal.fire({
+        toast: true,
+        position: "top-end",
+        icon: "error",
+        title: "Password Lenght must between 8 and 15 characters",
+        showConfirmButton: false,
+        timerProgressBar: true,
+        timer: 8000,
+      });
+      return false;
+    }
+    if (password !== cpassword) {
+      this.$swal.fire({
+        toast: true,
+        position: "top-end",
+        icon: "error",
+        title: "Password does not match",
+        showConfirmButton: false,
+        timerProgressBar: true,
+        timer: 8000,
+      });
+      return false;
+    }
     try {
       let result = await fetch(`${process.env.API}/register`, {
         method: "POST",
@@ -86,6 +123,7 @@ export default {
           timerProgressBar: true,
           timer: 3000,
         });
+        this.$router.push("/auth/login")
       } else {
         this.$swal.fire({
           toast: true,

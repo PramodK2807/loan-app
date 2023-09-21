@@ -10,11 +10,11 @@
           <div class="col-md-6 my-2 my-md-5 px-5">
             <div class="row align-items-center justify-content-between">
               <div class="col-3">
-                <img
+                <!-- <img
                   class="w-100"
                   src="~/assets/images/money.png"
                   alt="money"
-                />
+                /> -->
               </div>
               <div class="col-9">
                 <p class="green_text mb-4">Flexible Loan Amount</p>
@@ -32,13 +32,13 @@
           <div class="col-md-6 my-2 my-md-5 px-5">
             <div class="row align-items-center justify-content-between">
               <div class="col-3">
-                <img class="w-100" src="~/assets/images/re.png" alt="money" />
+                <!-- <img class="w-100" src="~/assets/images/re.png" alt="money" /> -->
               </div>
               <div class="col-9">
                 <p class="green_text mb-4">Pay On multiple installments</p>
                 <p class="description grey_text">
-                  Pay loan on multiple installments in every week,
-                  a fixed and simple installments you can pay. <br />
+                  Pay loan on multiple installments in every week, a fixed and
+                  simple installments you can pay. <br />
                   Customer Ease, Customer Satisfaction
                 </p>
               </div>
@@ -50,7 +50,7 @@
           <div class="col-md-6 my-2 my-md-5 px-5">
             <div class="row align-items-center justify-content-between">
               <div class="col-3">
-                <img class="w-100" src="~/assets/images/docs.png" alt="money" />
+                <!-- <img class="w-100" src="~/assets/images/docs.png" alt="money" /> -->
               </div>
               <div class="col-9">
                 <p class="green_text mb-4">Need a Single Document</p>
@@ -67,11 +67,11 @@
           <div class="col-md-6 my-2 my-md-5 pb-2 pb-md-0 px-5">
             <div class="row align-items-center justify-content-between">
               <div class="col-3">
-                <img
+                <!-- <img
                   class="w-100"
                   src="~/assets/images/intrest.png"
                   alt="money"
-                />
+                /> -->
               </div>
               <div class="col-9">
                 <p class="green_text mb-4">Affordable Interest Rates</p>
