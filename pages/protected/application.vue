@@ -54,9 +54,7 @@ export default {
   async mounted() {
     if (this.user) {
       this.loan.userId = this.user._id;
-      console.log(this.user.role)
     }
-    console.log(this.isAuthenticated)
     
   },
   methods: {

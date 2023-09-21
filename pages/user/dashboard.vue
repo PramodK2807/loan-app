@@ -119,7 +119,7 @@ export default {
         return false;
       }
       let res = await this.installmentPay(id);
-      console.log(res);
+      // console.log(res);
     },
 
     formatDate(inputDate) {

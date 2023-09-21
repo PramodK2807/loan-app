@@ -86,7 +86,7 @@ export default {
 
     async approveByAdmin(id) {
       let res = await this.adminApprove(id);
-      console.log(res);
+      // console.log(res);
     },
 
     formatDate(inputDate) {
@@ -99,22 +99,12 @@ export default {
   },
 
   async mounted() {
+    if (!this.user || !this.isAuthenticated) {
+      let auth = await this.initializeLocal();
+    }
     if (this.user && this.isAuthenticated) {
       let loan = await this.fetchLoan();
-    } else {
-      this.$swal.fire({
-          toast: true,
-          position: "top-end",
-          icon: "error",
-          title: "Please login First",
-          showConfirmButton: false,
-          timerProgressBar: true,
-          timer: 5000,
-      });
-
-      return false
     }
-    let auth = await this.initializeLocal();
   },
 };
 </script>

@@ -8,15 +8,6 @@ export default {
       let res = await result.json();
       if (res.success) {
         commit("setLoanDetails", res.loan);
-        this.$swal.fire({
-          toast: true,
-          position: "top-end",
-          icon: "success",
-          title: res.message,
-          showConfirmButton: false,
-          timerProgressBar: true,
-          timer: 2000,
-        });
         return true;
       } else {
         this.$swal.fire({
@@ -155,15 +146,15 @@ export default {
 
   async installmentPay({ commit }, installmentId) {
     let id = installmentId;
-    console.log(id);
+    // console.log(id);
     try {
-      let result = await fetch(`http://localhost:3500/api/loan/repayments`, {
+      let result = await fetch(`${process.env.API}/loan/repayments`, {
         method: "POST",
         body: JSON.stringify({ id }),
         headers: { "Content-Type": "application/json" },
       });
       let res = await result.json();
-      console.log(res);
+      // console.log(res);
       if (res.success) {
         commit("setScheduledRepayments", res.repayment);
         this.$swal.fire({
@@ -205,7 +196,7 @@ export default {
 
   async adminApprove({ commit }, loanId) {
     let id = loanId;
-    console.log(id);
+    // console.log(id);
     try {
       let result = await fetch(`${process.env.API}/loan/admin`, {
         method: "POST",

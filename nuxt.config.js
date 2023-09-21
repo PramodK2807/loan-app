@@ -1,4 +1,4 @@
-require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
+require("dotenv").config();
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -41,8 +41,12 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     "bootstrap-vue/nuxt",
     "vue-sweetalert2/nuxt",
-    ["@nuxtjs/dotenv", { filename: `.env.${process.env.NODE_ENV}` }],
+    ["@nuxtjs/dotenv"],
   ],
+
+  env: {
+    API: process.env.API || "http://localhost:8000",
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

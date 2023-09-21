@@ -25,7 +25,7 @@ export default {
         });
         return false;
       }
-      let result = await fetch(`http://localhost:3500/api/login`, {
+      let result = await fetch(`${process.env.API}/login`, {
         method: "POST",
         body: JSON.stringify({ email, password }),
         headers: { "Content-Type": "application/json" },
@@ -69,7 +69,7 @@ export default {
     let cpassword = registerData.confirmPassword;
     let agreement = registerData.agreement;
     try {
-      let result = await fetch(`http://localhost:3500/api/register`, {
+      let result = await fetch(`${process.env.API}/register`, {
         method: "POST",
         body: JSON.stringify({ name, email, password, cpassword, agreement }),
         headers: { "Content-Type": "application/json" },
@@ -105,6 +105,10 @@ export default {
     commit("setUser", null);
     commit("setToken", null);
     commit("setRole", null);
+    commit("setTotalLoanAmount", []);
+    commit("setLoanDetails", []);
+    commit("setRequestDate", []);
+    commit("setScheduledRepayments", []);
 
     window.localStorage.clear();
 
