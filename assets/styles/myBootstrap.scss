@@ -1,0 +1,27 @@
+:root{
+    --green-text : #0b8c4c;
+    --secondary-text : #777777;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.green_text{
+    color: var(--green-text);
+}
+
+.grey_text{
+    color: var(--secondary-text);
+}
+
+.arial{
+    font-family:Arial, Helvetica, sans-serif;
+}

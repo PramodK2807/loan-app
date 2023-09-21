@@ -1,0 +1,51 @@
+
+.input_container{
+    position: relative;
+}
+
+form{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    background-color: white;
+}
+
+.input{
+    position: relative;
+    width: 100% !important;
+    border: black solid 1px;
+    outline-color: #cccccc;
+    border-radius: 6px;
+}
+
+.eye_container .eye{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    right: 0%;
+    transform: translate(-50%, -50%) !important;
+    width:30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.auth_btn{
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+    border: solid 2px rgb(10, 190, 214);
+    background-color: #cccccc;
+    transition: all 0.5s;
+    position: relative;
+    left: 0;
+    transform: translateY(0);
+}
+.auth_btn:hover{
+    background-color:  rgb(10, 190, 214);
+    border: solid 2px #cccccc;
+    transform: translateY(10px);
+}
+
+.agreement a{
+    text-decoration: underline;
+    color: rgb(1, 146, 165);
+}
