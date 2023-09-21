@@ -68,19 +68,6 @@ export default {
     let password = registerData.password;
     let cpassword = registerData.confirmPassword;
     let agreement = registerData.agreement;
-    // const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    // if (!emailRegex.test(email)) {
-    //    this.$swal.fire({
-    //      toast: true,
-    //      position: "top-end",
-    //      icon: "error",
-    //      title: "Enter valid email address",
-    //      showConfirmButton: false,
-    //      timerProgressBar: true,
-    //      timer: 8000,
-    //    });
-    //    return false;
-    // }
     if (password.length < 8 || password.length > 15) {
       this.$swal.fire({
         toast: true,

@@ -134,7 +134,14 @@ export default {
         this.$swal.fire(`All fields are required: ${errorAlerts.join(", ")}`);
         return false;
       }
-      let res = await this.register(this.form)
+      if (
+        !/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(this.form.email)
+      ) {
+        this.$swal.fire("Invalid email address");
+        return false;
+      }
+
+      let res = await this.register(this.form);
       // console.log(res)
     },
   },
