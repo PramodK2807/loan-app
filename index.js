@@ -114,7 +114,7 @@ app.post('/api/login', async (req, res) => {
 app.post('/api/loan', async (req, res) => {
   try {
     let { amount, term, user } = req.body;
-    console.log(user, term, amount);
+    // console.log(user, term, amount);
     if (amount < 5000 || amount > 100000) {
       return res.status(400).send({
         message: 'Amount must be between 5000 and 1 Lakh',
@@ -151,7 +151,7 @@ app.post('/api/loan', async (req, res) => {
 app.post('/api/loan/payments', async (req, res) => {
   try {
     let userId = req.body.id;
-    console.log(userId);
+    // console.log(userId);
     const loan = await Loan.find({ user: userId });
     if (loan) {
       return res.status(200).send({
@@ -180,7 +180,7 @@ app.post('/api/loan/payments', async (req, res) => {
 app.post('/api/loan/repayments', async (req, res) => {
   try {
     const installmentId = req.body.id;
-    console.log('InstaID', installmentId);
+    // console.log('InstaID', installmentId);
 
     // Find the specific loan by its ID where scheduledRepayments contain the installment
     const loan = await Loan.findOne({
@@ -234,10 +234,10 @@ app.post('/api/loan/repayments', async (req, res) => {
 app.post('/api/loan/admin', async (req, res) => {
   try {
     const loanId = req.body.id;
-    console.log('loanId', loanId);
+    // console.log('loanId', loanId);
 
     const loan = await Loan.findOne({ _id: loanId});
-    console.log(loan)
+    // console.log(loan)
 
     if (!loan) {
       return res.status(404).send({
