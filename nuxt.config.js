@@ -1,4 +1,4 @@
-require("dotenv").config({ path: `.env` });;
+require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -28,9 +28,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: "~/plugins/date-format.js", mode: "client" },
-  ],
+  plugins: [{ src: "~/plugins/date-format.js", mode: "client" }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -43,7 +41,7 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     "bootstrap-vue/nuxt",
     "vue-sweetalert2/nuxt",
-    ["@nuxtjs/dotenv", { filename: `.env` }],
+    ["@nuxtjs/dotenv", { filename: `.env.${process.env.NODE_ENV}` }],
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
